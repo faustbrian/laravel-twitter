@@ -24,6 +24,7 @@ namespace BrianFaust\Twitter;
 
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterManager extends AbstractManager
 {
@@ -54,7 +55,7 @@ class TwitterManager extends AbstractManager
      *
      * @return mixed
      */
-    protected function createConnection(array $config)
+    protected function createConnection(array $config): TwitterOAuth
     {
         return $this->factory->make($config);
     }
@@ -64,7 +65,7 @@ class TwitterManager extends AbstractManager
      *
      * @return string
      */
-    protected function getConfigName()
+    protected function getConfigName(): string
     {
         return 'twitter';
     }
@@ -74,7 +75,7 @@ class TwitterManager extends AbstractManager
      *
      * @return \BrianFaust\Twitter\TwitterFactory
      */
-    public function getFactory()
+    public function getFactory(): TwitterFactory
     {
         return $this->factory;
     }

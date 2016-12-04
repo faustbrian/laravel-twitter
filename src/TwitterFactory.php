@@ -32,9 +32,9 @@ class TwitterFactory
      *
      * @param array $config
      *
-     * @return \Twitter\Twitter
+     * @return \Abraham\TwitterOAuth\TwitterOAuth
      */
-    public function make(array $config)
+    public function make(array $config): TwitterOAuth
     {
         $config = $this->getConfig($config);
 
@@ -50,7 +50,7 @@ class TwitterFactory
      *
      * @return array
      */
-    protected function getConfig(array $config)
+    protected function getConfig(array $config): array
     {
         $keys = ['consumer_key', 'consumer_secret'];
 
@@ -70,7 +70,7 @@ class TwitterFactory
      *
      * @return \Twitter\Twitter
      */
-    protected function getClient(array $auth)
+    protected function getClient(array $auth): TwitterOAuth
     {
         return new TwitterOAuth(
             $auth['consumer_key'],
