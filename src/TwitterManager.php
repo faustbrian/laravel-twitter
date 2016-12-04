@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Twitter;
 
+use Abraham\TwitterOAuth\TwitterOAuth;
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
-use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterManager extends AbstractManager
 {
