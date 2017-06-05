@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Twitter.
  *
@@ -59,7 +56,7 @@ class TwitterManager extends AbstractManager
      */
     protected function getConfigName(): string
     {
-        return 'twitter';
+        return 'laravel-twitter';
     }
 
     /**

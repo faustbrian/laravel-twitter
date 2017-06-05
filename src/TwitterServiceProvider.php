@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Twitter.
  *
@@ -22,29 +19,31 @@ class TwitterServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      */
-    public function boot(): void
+    public function boot()
     {
-        $source = realpath(__DIR__.'/../config/twitter.php');
-
-        $this->publishes([$source => config_path('twitter.php')]);
-
-        $this->mergeConfigFrom($source, 'twitter');
+        $this->publishes([
+            __DIR__.'/../config/laravel-twitter.php' => config_path('laravel-twitter.php'),
+        ]);
     }
 
     /**
      * Register the service provider.
      */
-    public function register(): void
+    public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-twitter.php', 'laravel-twitter');
+
         $this->registerFactory();
+
         $this->registerManager();
+
         $this->registerBindings();
     }
 
     /**
      * Register the factory class.
      */
-    protected function registerFactory(): void
+    protected function registerFactory()
     {
         $this->app->singleton('twitter.factory', function () {
             return new TwitterFactory();
@@ -56,7 +55,7 @@ class TwitterServiceProvider extends ServiceProvider
     /**
      * Register the manager class.
      */
-    protected function registerManager(): void
+    protected function registerManager()
     {
         $this->app->singleton('twitter', function (Container $app) {
             $config = $app['config'];
@@ -71,7 +70,7 @@ class TwitterServiceProvider extends ServiceProvider
     /**
      * Register the bindings.
      */
-    protected function registerBindings(): void
+    protected function registerBindings()
     {
         $this->app->bind('twitter.connection', function (Container $app) {
             $manager = $app['twitter'];
