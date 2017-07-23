@@ -11,8 +11,8 @@
 
 namespace BrianFaust\Twitter;
 
-use Abraham\TwitterOAuth\TwitterOAuth;
 use InvalidArgumentException;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterFactory
 {
@@ -44,7 +44,7 @@ class TwitterFactory
         $keys = ['consumer_key', 'consumer_secret'];
 
         foreach ($keys as $key) {
-            if (!array_key_exists($key, $config)) {
+            if (! array_key_exists($key, $config)) {
                 throw new InvalidArgumentException("Missing configuration key [$key].");
             }
         }
