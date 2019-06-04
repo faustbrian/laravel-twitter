@@ -5,13 +5,13 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Twitter.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\Twitter;
+namespace Artisanry\Twitter;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 use GrahamCampbell\Manager\AbstractManager;
@@ -22,7 +22,7 @@ class TwitterManager extends AbstractManager
     /**
      * The factory instance.
      *
-     * @var \BrianFaust\Twitter\TwitterFactory
+     * @var \Artisanry\Twitter\TwitterFactory
      */
     private $factory;
 
@@ -30,7 +30,7 @@ class TwitterManager extends AbstractManager
      * Create a new Twitter manager instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \BrianFaust\Twitter\TwitterFactory      $factory
+     * @param \Artisanry\Twitter\TwitterFactory      $factory
      */
     public function __construct(Repository $config, TwitterFactory $factory)
     {
@@ -64,7 +64,7 @@ class TwitterManager extends AbstractManager
     /**
      * Get the factory instance.
      *
-     * @return \BrianFaust\Twitter\TwitterFactory
+     * @return \Artisanry\Twitter\TwitterFactory
      */
     public function getFactory(): TwitterFactory
     {

@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-twitter",
+    "name": "artisanry/twitter",
     "description": "A Twitter bridge for Laravel",
-    "keywords": ["laravel", "framework", "Laravel-Twitter", "Laravel Twitter", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-Twitter", "Laravel Twitter"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Twitter\\": "src/"
+            "Artisanry\\Twitter\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Twitter\\": "tests"
+            "Artisanry\\Tests\\Twitter\\": "tests"
         }
     },
     "config": {
@@ -38,10 +38,10 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Twitter\\TwitterServiceProvider"
+                "Artisanry\\Twitter\\TwitterServiceProvider"
             ],
             "aliases": {
-                "Twitter": "BrianFaust\\Twitter\\Facades\\Twitter"
+                "Twitter": "Artisanry\\Twitter\\Facades\\Twitter"
             }
         }
     },

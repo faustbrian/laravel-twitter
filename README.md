@@ -1,9 +1,9 @@
 # Laravel Twitter
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Twitter/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Twitter)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-twitter.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Twitter.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Twitter/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Twitter.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Twitter)
+[![Build Status](https://img.shields.io/travis/artisanry/Twitter/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Twitter)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/twitter.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Twitter.svg?style=flat-square)](https://github.com/artisanry/Twitter/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Twitter.svg?style=flat-square)](https://packagist.org/packages/artisanry/Twitter)
 
 > A [Twitter](https://twitter.com) bridge for Laravel.
 
@@ -12,7 +12,7 @@
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
-$ composer require faustbrian/laravel-twitter
+$ composer require artisanry/twitter
 ```
 
 ## Configuration
@@ -20,7 +20,7 @@ $ composer require faustbrian/laravel-twitter
 Laravel Twitter requires connection configuration. To get started, you'll need to publish all vendor assets:
 
 ```bash
-$ php artisan vendor:publish --provider="BrianFaust\Twitter\TwitterServiceProvider"
+$ php artisan vendor:publish --provider="Artisanry\Twitter\TwitterServiceProvider"
 ```
 
 This will create a `config/twitter.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
@@ -53,7 +53,7 @@ Here you can see an example of just how simple this package is to use. Out of th
 
 ```php
 // You can alias this in config/app.php.
-use BrianFaust\Twitter\Facades\Twitter;
+use Artisanry\Twitter\Facades\Twitter;
 
 Twitter::get("account/verify_credentials");
 // We're done here - how easy was that, it just works!
@@ -62,7 +62,7 @@ Twitter::get("account/verify_credentials");
 The Twitter manager will behave like it is a `Twitter\Twitter`. If you want to call specific connections, you can do that with the connection method:
 
 ```php
-use BrianFaust\Twitter\Facades\Twitter;
+use Artisanry\Twitter\Facades\Twitter;
 
 // Writing this…
 Twitter::connection('main')->get("account/verify_credentials");
@@ -83,7 +83,7 @@ Twitter::setDefaultConnection('alternative'); // The default is now alternative.
 If you prefer to use dependency injection over facades like me, then you can inject the manager:
 
 ```php
-use BrianFaust\Twitter\TwitterManager;
+use Artisanry\Twitter\TwitterManager;
 
 class Foo
 {
@@ -115,7 +115,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -124,4 +124,4 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)
