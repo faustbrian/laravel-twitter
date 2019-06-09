@@ -30,7 +30,7 @@ class TwitterManager extends AbstractManager
      * Create a new Twitter manager instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Artisanry\Twitter\TwitterFactory      $factory
+     * @param \Artisanry\Twitter\TwitterFactory       $factory
      */
     public function __construct(Repository $config, TwitterFactory $factory)
     {
